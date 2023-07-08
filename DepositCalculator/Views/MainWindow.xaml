@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DepositCalculator" 
         xmlns:converters="clr-namespace:DepositCalculator.Converters"
         mc:Ignorable="d"
         Title="Deposit calculator" Height="400" Width="400" ResizeMode="NoResize">
@@ -12,49 +11,33 @@
     <converters:IntToStringConverter x:Key="intToStringConverter" />
     <converters:DateOnlyConverter x:Key="dateOnlyConverter" />
   </Window.Resources>
-  <Grid Margin="10, 5, 10, 5">
-    <Grid.Resources>
+  <UniformGrid Margin="10, 5, 10, 5" Rows="8">
+    <UniformGrid.Resources>
       <Style x:Key="ComboboxTextBlock">
       </Style>
-    </Grid.Resources>
-    <Grid.RowDefinitions>
-      <RowDefinition />
-      <RowDefinition />
-      <RowDefinition />
-      <RowDefinition />
-      <RowDefinition />
-      <RowDefinition />
-      <RowDefinition />
-      <RowDefinition />
-    </Grid.RowDefinitions>
-    <StackPanel Grid.Row="0" VerticalAlignment="Center">
-      <TextBlock >Currency</TextBlock>
+    </UniformGrid.Resources>
+    <StackPanel VerticalAlignment="Center">
+      <TextBlock Text="Currency"/>
       <ComboBox Name="currenciesCombobox" 
                 SelectedIndex="0"
                 ItemsSource="{Binding Path = Currencies}" 
-                SelectedItem="{Binding Path = Calculation.CalculationInputData.Currency, UpdateSourceTrigger=PropertyChanged}">
-        <ComboBox.ItemTemplate>
-          <DataTemplate>
-            <TextBlock Style="{StaticResource ComboboxTextBlock}" Text="{Binding}" />
-          </DataTemplate>
-        </ComboBox.ItemTemplate>
-      </ComboBox>
+                SelectedItem="{Binding Path = Calculation.CalculationInputData.Currency, UpdateSourceTrigger=PropertyChanged}"/>
     </StackPanel>
-    <StackPanel Grid.Row="1"  VerticalAlignment="Center">
-      <TextBlock>Total Investment</TextBlock>
+    <StackPanel VerticalAlignment="Center">
+      <TextBlock Text="Total Investment"/>
       <TextBox  Name="totalInvestment"
                PreviewTextInput="TextBox_ValidatePositiveNumber" 
                TextChanged="TextBox_RequiredDataTextChanged"
                Text="{Binding Path = Calculation.CalculationInputData.TotalInvestment, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource doubleToStringConverter}}"/>
     </StackPanel>
-    <StackPanel Grid.Row="2"  VerticalAlignment="Center">
-      <TextBlock> Rate of interest, %</TextBlock>
+    <StackPanel  VerticalAlignment="Center">
+      <TextBlock Text="Rate of interest, %"/>
       <TextBox  Text="{Binding Path = Calculation.CalculationInputData.RateOfInterest, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource doubleToStringConverter}}"
                 PreviewTextInput="TextBox_ValidatePercent"
                 TextChanged="TextBox_RequiredDataTextChanged"/>
     </StackPanel>
-    <StackPanel Grid.Row="3"  VerticalAlignment="Center">
-      <TextBlock  >Date of infestment</TextBlock>
+    <StackPanel VerticalAlignment="Center">
+      <TextBlock Text="Date of infestment"/>
       <DatePicker  Name="datePicker1" 
                    SelectedDateFormat="Short" 
                    SelectedDate="{Binding Calculation.CalculationInputData.DateOfInvestment, Mode = TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource dateOnlyConverter}}">
@@ -65,21 +48,15 @@
         </DatePicker.Resources>
       </DatePicker>
     </StackPanel>
-    <StackPanel Grid.Row="4" VerticalAlignment="Center">
+    <StackPanel VerticalAlignment="Center">
       <Grid >
-        <TextBlock HorizontalAlignment="Left">Time period</TextBlock>
+        <TextBlock HorizontalAlignment="Left" Text="Time period"/>
         <ComboBox HorizontalAlignment="Left" 
                   Name="timePeriodsCombobox"
                   Margin="75, 0, 0, 0"
                   SelectedIndex="0" 
                   SelectedItem="{Binding Path = Calculation.CalculationInputData.DepositPeriodType, UpdateSourceTrigger=PropertyChanged}"
-                  Width="80">
-          <ComboBox.ItemTemplate>
-            <DataTemplate>
-              <TextBlock Style="{StaticResource ComboboxTextBlock}" Text="{Binding}" />
-            </DataTemplate>
-          </ComboBox.ItemTemplate>
-        </ComboBox>
+                  Width="80"/>
         <TextBox  Text="{Binding Path = Calculation.CalculationInputData.DepositPeriod, Mode = OneWayToSource, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource intToStringConverter}}" 
                   PreviewTextInput="TextBox_ValidatePositiveNumberInt"
                   HorizontalAlignment="Right" 
@@ -89,21 +66,15 @@
                   />
       </Grid>
     </StackPanel>
-    <StackPanel Grid.Row="5"  VerticalAlignment="Center">
-      <TextBlock>Capitalization</TextBlock>
+    <StackPanel VerticalAlignment="Center">
+      <TextBlock Text="Capitalization"/>
       <ComboBox  
                   Name="capitalizationCombobox"
                   SelectedIndex="0" 
-                  SelectedItem="{Binding Path = Calculation.CalculationInputData.Capitalization, UpdateSourceTrigger=PropertyChanged}">
-        <ComboBox.ItemTemplate>
-          <DataTemplate>
-            <TextBlock Style="{StaticResource ComboboxTextBlock}" Text="{Binding}" />
-          </DataTemplate>
-        </ComboBox.ItemTemplate>
-      </ComboBox>
+                  SelectedItem="{Binding Path = Calculation.CalculationInputData.Capitalization, UpdateSourceTrigger=PropertyChanged}"/>
     </StackPanel>
-    <StackPanel Grid.Row="6"  VerticalAlignment="Center">
-      <TextBlock>Result:</TextBlock>
+    <StackPanel VerticalAlignment="Center">
+      <TextBlock Text="Result:"/>
       <TextBox Text="{Binding Path = Calculation.Result, 
         Mode = TwoWay, 
         UpdateSourceTrigger=PropertyChanged, 
@@ -111,6 +82,6 @@
                IsReadOnly="True"
                PreviewTextInput="TextBox_ValidatePositiveNumber"/>
     </StackPanel>
-    <Button Grid.Row="7" VerticalAlignment="Center" Width="100" Height="30" Command="{Binding CalculationCommand}">Calculate</Button>
-  </Grid>
+    <Button VerticalAlignment="Center" Width="100" Height="30" Command="{Binding CalculationCommand}">Calculate</Button>
+  </UniformGrid>
 </Window>
