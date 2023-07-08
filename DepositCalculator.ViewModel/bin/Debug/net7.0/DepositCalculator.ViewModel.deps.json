@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "DepositCalculator.ViewModel/1.0.0": {
+        "dependencies": {
+          "DepositCalculator.Model": "1.0.0"
+        },
+        "runtime": {
+          "DepositCalculator.ViewModel.dll": {}
+        }
+      },
+      "DepositCalculator.Model/1.0.0": {
+        "runtime": {
+          "DepositCalculator.Model.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DepositCalculator.ViewModel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DepositCalculator.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

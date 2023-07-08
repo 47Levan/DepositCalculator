@@ -1,0 +1,12 @@
+E:\W\Projects\DepositCalculator\DepositCalculator.Model\bin\Debug\net7.0\DepositCalculator.Model.deps.json
+E:\W\Projects\DepositCalculator\DepositCalculator.Model\bin\Debug\net7.0\DepositCalculator.Model.dll
+E:\W\Projects\DepositCalculator\DepositCalculator.Model\bin\Debug\net7.0\DepositCalculator.Model.pdb
+E:\W\Projects\DepositCalculator\DepositCalculator.Model\obj\Debug\net7.0\DepositCalculator.Model.csproj.AssemblyReference.cache
+E:\W\Projects\DepositCalculator\DepositCalculator.Model\obj\Debug\net7.0\DepositCalculator.Model.GeneratedMSBuildEditorConfig.editorconfig
+E:\W\Projects\DepositCalculator\DepositCalculator.Model\obj\Debug\net7.0\DepositCalculator.Model.AssemblyInfoInputs.cache
+E:\W\Projects\DepositCalculator\DepositCalculator.Model\obj\Debug\net7.0\DepositCalculator.Model.AssemblyInfo.cs
+E:\W\Projects\DepositCalculator\DepositCalculator.Model\obj\Debug\net7.0\DepositCalculator.Model.csproj.CoreCompileInputs.cache
+E:\W\Projects\DepositCalculator\DepositCalculator.Model\obj\Debug\net7.0\DepositCalculator.Model.dll
+E:\W\Projects\DepositCalculator\DepositCalculator.Model\obj\Debug\net7.0\refint\DepositCalculator.Model.dll
+E:\W\Projects\DepositCalculator\DepositCalculator.Model\obj\Debug\net7.0\DepositCalculator.Model.pdb
+E:\W\Projects\DepositCalculator\DepositCalculator.Model\obj\Debug\net7.0\ref\DepositCalculator.Model.dll
